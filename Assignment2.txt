@@ -1,0 +1,267 @@
+1.package Corejava1;
+import java.util.Scanner;
+class Q1
+{
+    public static void main(String[]args)
+    {
+        Scanner sc =new Scanner(System.in);
+         int n = sc.nextInt();
+         for(int i=1;i<=10;i++)
+         {
+             System.out.println(n+"*"+i+"="+n*i);
+         }
+    }
+}
+
+2.package Corejava1;
+import java.util.Scanner;
+class Q2
+{
+    public static void main(String[]args)
+    {
+        int sum=0;
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        while(n>0)
+        {
+            int  remainder = n%10;
+             sum = sum*10+remainder;
+             n=n/10;
+        }
+        System.out.println("Reverse of number is:"+sum);
+    }
+}
+
+3.package Corejava1;
+import java.util.Scanner;
+class Q3
+{
+    public static void main(String[]args)
+    {
+        Scanner sc =new Scanner(System.in);
+        int n=sc.nextInt();
+        boolean f = false;
+        for(int i = 2; i <= n/2; ++i)
+        {
+            // condition for nonprime number
+            if(n % i == 0)
+            {
+                f = true;
+                break;
+            }
+        }
+
+        if (!f)
+            System.out.println(n + " is a prime number.");
+        else
+            System.out.println(n+ " is not a prime number.");
+    }
+}
+
+4.package Corejava1;
+import java.util.Scanner;
+class series
+{
+    public static void main(String[]args)
+    {
+        int i;
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        for( i=12;i<=n;i=i+10)
+        {
+            System.out.print(i+" ");
+        
+        }
+    }
+}
+
+
+5. package Corejava1;
+import java.util.Scanner;
+class sorting
+{
+    public static void main(String[]args)
+    {
+        
+        int c;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of array");
+        int n =sc.nextInt();
+        int a[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+           a[i]=sc.nextInt();
+        }
+        for(int i=0;i<n-1;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+               if(a[i]<a[j])
+              {
+                c=a[i];
+                a[i]=a[j];
+                a[j]=c;
+              }
+            }
+        }
+        System.out.println("Sorted array is:");
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+
+
+6.package CoreJava1;
+import java.util.Scanner;
+class primenumberrange
+{
+    public static void main(String[]args)
+    {
+        Scanner sc = new Scanner(System.in); 
+      
+        int a, b, i, j, flag; 
+  
+       
+        System.out.printf("Enter lower limit: "); 
+        a = sc.nextInt(); 
+  
+        
+        System.out.printf("\nEnter upper limit: "); 
+        b = sc.nextInt();
+  
+        
+        System.out.printf("\nPrime numbers between %d and %d are: ", a, b); 
+  
+       
+        for (i = a; i <= b; i++) { 
+  
+            if (i == 1 || i == 0) 
+                continue; 
+  
+           
+            flag = 1; 
+              for (j = 2; j <= i / 2; ++j) { 
+                if (i % j == 0) { 
+                    flag = 0; 
+                    break; 
+                } 
+            } 
+  
+            if (flag == 1) 
+                System.out.println(i); 
+        } 
+    }
+}
+
+7.package Corejava1;
+import java.util.Scanner;
+class Q9
+{
+    public static void main(String[]args)
+    {
+        Scanner sc =new Scanner(System.in);
+        int a[]=new int[5];
+        for(int i=0;i<5;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        System.out.println("enter the element in the array to search");
+        int b= sc.nextInt();
+        for(int i=0;i<5;i++)
+        {
+            if(a[i]==b)
+            {
+                System.out.println("Element found");
+                break;
+            }
+            else
+            {
+                System.out.println("not found");
+                break;
+            }
+        }
+    }
+}
+
+8. package Corejava1;
+import java.util.Scanner;
+class Q8
+{
+    public static void main(String[]args)
+    {
+        int c;
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter the element array");
+        int n =sc.nextInt();
+       int a[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        for(int i=0;i<=n/2;i++)
+        {
+            c=a[i];
+            a[i]=a[n-i-1];
+            a[n-i-1]=c;
+        }
+        System.out.println("Reverse array is:");
+        for(int i=0;i<n;i++)
+        {
+            System.out.println(a[i]);
+        }
+    }
+}
+
+9.package Corejava1;
+import java.util.Scanner;
+class Avg
+{
+    public static void main(String[]args)
+    {
+        int sum=0;
+        Scanner sc =new Scanner(System.in);
+        int n= sc.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+           a[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++)
+        {
+            sum = sum+ a[i];
+        }
+        int Avg= sum/n;
+        System.out.println(Avg);
+    }
+}
+
+10.package Corejava1;
+import java.util.Scanner ;
+class Q10
+{
+    public static void main(String[]args)
+    {
+        int sum=0,sum1=0;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a[] =new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]%2==0)
+            {
+                sum = sum +a[i];
+            }else
+            {
+               sum1=sum1+a[i]; 
+            }
+        }
+        System.out.println("sum of even array:"+ sum);
+        System.out.println("Sum of odd array:"+ sum1);
+    }
+}
