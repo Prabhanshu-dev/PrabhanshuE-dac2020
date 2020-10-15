@@ -1,0 +1,309 @@
+1.package CoreJava;
+  class helloworld
+  {
+      public static void main(String[]args)
+      {
+          System.out.println("Hello world");
+      }
+  }
+
+
+2.package CoreJava;
+import java.util.Scanner;
+class Q2
+{
+    public static void main(String[]args)
+    {
+        Scanner sc =new Scanner(System.in);
+        int rollno=sc.nextInt();
+        System.out.println("rollno is: "+rollno);
+    }
+}
+
+
+3.package CoreJava;
+import java.util.Scanner;
+
+class java
+{
+    public void f(int x)
+    {
+       int y =x*x+3*x-7;
+        System.out.println(y);
+    }
+    public void f1(int x)
+    {
+       int y =x++ + ++x;//5+7 last value of x is 7
+        System.out.println("value of x:"+x);
+        System.out.println("value of y:"+y);
+    }
+    public void f2(int x ,int y)
+    {
+        int z=x++ - --y - --x + x++;//5-4-5+5 last value of x is 6,last value of y is 4
+        System.out.println("Value of x:"+ x);
+        System.out.println("value of y:"+ y);
+        System.out.println("Value of z:"+ z);
+    }
+    public void f3(boolean x,boolean y)
+    {
+        boolean z =x && y ||!(x||y);//T&&T||!(T||T)
+        System.out.println(z);
+    }
+}
+class Q3a
+{
+    public static void main(String[]args)
+    {
+        System.out.println("Enter number");
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int y =sc.nextInt();
+        boolean z= sc.nextBoolean();
+        boolean m=sc.nextBoolean();
+        System.out.println("-------------------------");
+        java obj = new java();
+        obj.f(x);
+        System.out.println("--------------------------");
+        obj.f1(x);
+        System.out.println("----------------------------");
+        obj.f2(x,y);
+        System.out.println("---------------------------------");
+        obj.f3(z,m);
+        
+    }
+}
+
+
+4.package CoreJava;
+import java.util.Scanner;
+class Q4
+{
+    public static void main(String[]args)
+    {
+       Scanner sc = new Scanner(System.in);
+       byte a =sc.nextByte();
+       byte b = sc.nextByte();
+       byte c =(byte)(a+b);
+       System.out.println("value of a is:"+c);
+    }
+}
+
+
+5.package CoreJava;
+import java.util.Scanner;
+class Q5
+{
+    public static void main(String[]args)
+    {
+        Scanner sc =new Scanner(System.in);
+        String s =sc.nextLine();
+        System.out.println("Weclome "+s);
+    }
+}
+
+6.package CoreJava;
+import java.util.Scanner;
+class Q6
+{
+    public static void main(String[]args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int radius = sc.nextInt();
+        double circumfence = 2*3.14*radius;
+        double aera = 3.14*radius*radius;
+        System.out.println(circumfence);
+        System.out.println(aera);
+        
+    }
+}
+
+7.package CoreJava;
+import java.util.Scanner;
+class Q7
+{
+    public static void main(String[]args)
+    {
+        int sum;
+        Scanner sc =new Scanner(System.in);
+         System.out.println("Enter the marks of five subject");
+         int x = sc.nextInt();
+         int y =sc.nextInt();
+         int z =sc.nextInt();
+         int w=sc.nextInt();
+         int m=sc.nextInt();
+         sum =x+y+z+w+m;
+         int percentage = (sum*100)/500;
+         System.out.println(percentage+"%");
+         
+    }
+}
+
+
+8.package CoreJava;
+import java.util.Scanner;
+class Q8
+{
+    public static void main(String[]args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int p = sc.nextInt();
+        int r = sc.nextInt();
+        int t =sc.nextInt();
+        int interst = (p*r*t)/100;
+        int amount=p+interst;
+        System.out.println(amount);
+    }
+}
+
+9.package CoreJava;
+import java.util.Scanner;
+ class Q9
+ {
+
+    public static void main(String[] args) 
+    {
+        
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter days: ");
+        int days = in.nextInt(); 
+        int years = (days / 365);
+        int month = (days % 365) / 7;
+            days  = (days % 365) % 7;
+        System.out.println("Year = " + years);
+        System.out.println("month = " + month);
+        System.out.println("Day  = " + days);
+    }
+}
+
+
+10. package CoreJava;
+import java.util.Scanner;
+class Q10
+{
+    public static void main(String[]args)
+    {
+        int c;
+        Scanner sc =new Scanner(System.in);
+        int f =sc.nextInt();
+        if(f>12 && f<212)
+        {
+            c=5*(f-32)/9;
+            System.out.println("Temperature in Celcius is:"+c);
+        }
+    }
+}
+
+
+11.package CoreJava;
+import java.util.Scanner;
+class Q11
+{
+    public static void main(String[]args)
+    {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter the salary:");
+        int  bs=sc.nextInt();
+           if(bs<10000)
+           {
+               int hra =(10*bs)/100;
+               int da=(90*bs)/100;
+               int gs =bs+hra+da;
+               System.out.println(" gross salary is:"+gs);
+           }else if(bs>=10000)
+           {
+               int hra =2000;
+               int da =(98*bs)/100;
+               int gs1 =bs+hra+da;
+               System.out.println("grosss salary is:"+gs1);
+           }
+    }
+}
+
+12.package CoreJava;
+class Q12
+{
+    public static void main(String[]args)
+    {
+        int a =11 ,b=9;
+        a=(a+b)-a;
+        System.out.println("Value of a is:"+a);
+        b=(a+b+1)-b;
+        
+        System.out.println("value of b is:"+b);
+    }
+}
+
+
+13.package Corejava;
+import java.util.Scanner;
+class Q13
+{
+    public static void main(String[]args)
+    {
+         int a, b, c, d;
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter all three numbers:");
+        a = s.nextInt();
+        b = s.nextInt();
+        c = s.nextInt();
+        d = c > (a > b ? a : b) ? c : ((a > b) ? a : b);
+        System.out.println("Largest Number:"+d);
+    }
+}
+
+14.package CoreJava;
+class Q15
+{
+    public static void main(String[]args)
+    {
+         int year = 1900;
+        boolean leap = false;
+
+        if(year % 4 == 0)
+        {
+            if( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+
+        if(leap)
+            System.out.println(year + " is a leap year.");
+        else
+            System.out.println(year + " is not a leap year.");
+    }
+}
+
+15.package CoreJava;
+import java.util.Scanner;
+class Q16
+{
+    public static void main(String[]args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the age:");
+        int age =sc.nextInt();
+        
+        sc.nextLine();
+        System.out.println("Enter the gender of person");
+        String gender = sc.nextLine();
+        if(age>=21 && gender=="male")
+        {
+            System.out.println("person is eligible to marriage");
+        }else if(age>=18 && gender=="female")
+        {
+            System.out.println("person is eligible to marriage");
+        }else
+        {
+            System.out.println("Invalid choice");
+        }
+    }
+}
+
