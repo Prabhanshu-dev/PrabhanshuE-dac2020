@@ -1,0 +1,241 @@
+1.package EDACProject;
+import java.util.Scanner;
+class array5
+{
+     String name;
+    int rollno;
+    double marks;
+    int age;
+    array5()
+    {
+        System.out.println("Constructor is called");
+    }
+    array5(int rn,String n,int a,double m)
+    {
+        System.out.println("four argument constructor is called");
+        rollno=rn;
+        marks=m;
+        name=n;
+        age=a;
+    }
+    void learning()
+    {
+        System.out.println(name+" is learning");
+    }
+    void printDetails()
+    {
+        System.out.println(rollno);
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(marks);
+    }
+}
+class arrayobject3
+{
+    public static void main(String[]args)
+    {
+        Scanner sc= new Scanner(System.in);
+        array5 stud[]= new array5[1];
+        for(int i=0;i<1;i++)
+        {
+            System.out.println("Enter rollno,name,age and marks");
+            int r=sc.nextInt();
+            String n =sc.next();
+            int a=sc.nextInt();
+            double m=sc.nextDouble();
+            stud[i] =new array5(r,n,a,m);
+        }
+        for(int i=0;i<1;i++)
+        {
+            stud[i].printDetails();
+            stud[i].learning();
+        }
+    }
+}
+
+
+3.package classconst;
+import java.util.Scanner;
+class book3
+{
+    int id;
+    String name;
+    int price;
+    book3(int rn,String n,int a)
+    {
+        id=rn;
+        name=n;
+        price=a;
+    }
+    int highestprice(book3 book[])
+    {
+         int max = book[0].price;
+      for( int i=1;i<5;i++)
+      {
+       if(book[i].price>max)
+       {
+           max=book[i].price;
+       }
+      }
+      return max;
+    }
+}
+class book2
+{
+    public static void main(String[]args)
+    {
+        int i,m=0;
+         Scanner sc= new Scanner(System.in);
+        book3 book[]=new book3[5];
+        for(i=0;i<5;i++)
+        {
+             int r=sc.nextInt();
+            String n =sc.next();
+            int a=sc.nextInt();
+            book[i] =new book3(r,n,a);
+        }
+       for(i=0;i<5;i++)
+       {
+            m =book[i].highestprice(book);
+       }
+       System.out.println(m);
+    }
+ }
+   
+
+4. package classconst;
+import java.util.Scanner;
+class employee1
+{
+     int id;
+    String name;
+     String designation;
+      employee1(int id, String name , String designation)
+      {
+          this.id =id;
+          this.name = name;
+          this.designation = designation;
+      }
+        void employeedetails(employee1 emp[],String companyname,int salary,int bonus)
+        {
+               String cm = companyname;
+              // int sa=salary;
+              // int bo=bonus;
+               System.out.println("company name is "+cm);
+               System.out.println("salary is "+salary);
+               System.out.println("bonus is "+bonus);
+               System.out.println("name is "+name);
+               System.out.println("designation is "+designation);
+               System.out.println("id is "+ id);
+        }
+        void details(int id,String name,String designation)
+        {
+            this.id=id;
+            this.name=name;
+            this.designation=designation;
+            System.out.println("id of employee is "+id);
+            System.out.println("name of employee is "+name);
+            System.out.println("designation is "+designation);
+        }
+      
+}
+class employee
+{
+    public static void main(String[]args)
+    {
+        int i;
+        int id=0;
+        String name=" ";
+        String designation=" ";
+        Scanner sc = new Scanner(System.in);
+        employee1 emp[] = new employee1[2];//int arr[] =new int[];(array of employees)
+        for(i=0;i<2;i++)
+        {
+             id= sc.nextInt();
+             name = sc.next();
+              sc.nextLine();
+             designation = sc.next();
+            emp[i] = new employee1(id,name,designation); 
+        }
+       for(i=0;i<2;i++)
+       {
+        if((emp[i].designation).equalsIgnoreCase("Manager"))
+        {
+             String companyname = sc.next();
+             int salary=sc.nextInt();
+             int bonus= sc.nextInt();
+            emp[i].employeedetails(emp,companyname,salary,bonus);
+        }
+        else
+        {
+            emp[i].details(id,name,designation);
+        }
+       }
+    }
+}
+
+
+5.class ComplexNumber
+{  
+   double real, img;
+   ComplexNumber(double r, double i){
+	this.real = r;
+	this.img = i;
+   }
+	
+   public static ComplexNumber sum(ComplexNumber c1, ComplexNumber c2)
+   {
+	 ComplexNumber temp = new ComplexNumber(0, 0);
+
+        temp.real = c1.real + c2.real;
+        temp.img = c1.img + c2.img;
+        
+       
+        return temp;
+    }
+    public static void main(String args[]) {
+	ComplexNumber c1 = new ComplexNumber(5.5, 4);
+	ComplexNumber c2 = new ComplexNumber(1.2, 3.5);
+        ComplexNumber temp = sum(c1, c2);
+        System.out.printf("Sum is: "+ temp.real+" + "+ temp.img +"i");
+    }
+}
+
+6.package classconst;
+import java.util.Scanner;
+class SimpleInterest
+{
+    int principalamount;
+    double rateofinterest;
+    int years;
+    SimpleInterest(int p,int t,double r)
+    {
+        principalamount=p;
+        rateofinterest=r;
+        years=t;
+    }
+    void Interest()
+    {
+        double interest = (principalamount*rateofinterest*years)/100;
+        System.out.println(interest);
+    }
+}
+class Si
+{
+  public static void main(String[]args)
+  {
+      Scanner sc = new Scanner(System.in);
+        SimpleInterest si[]=new SimpleInterest[5];
+        for(int i=0;i<5;i++)
+        {
+            int p=sc.nextInt();
+            int t= sc.nextInt();
+            double r = sc.nextDouble();
+            si[i]=new SimpleInterest(p,t,r);
+        }
+        for(int i=0;i<5;i++)
+        {
+            si[i].Interest();
+        }
+  }
+}   
