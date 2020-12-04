@@ -1,0 +1,20 @@
+
+use dbtassignment;
+create table Member(Member_id int(10),Member_Name char(20),Member_address char(20),Acc_Open_Date Date,Membership_type Varchar(20),Penalty_Amount numeric(15));
+insert into Member values('1','Prabhanshu','Varanasi','2020/Dec/10','Annual','2000');
+insert into Member values('2','Garima Rai','Delhi',curdate(),'Monthly','2000');
+insert into member values('3','Rahul','Delhi',curdate(),'Annual','3000');
+select curdate();
+create table Book(Book_No int(10),Book_Name Varchar(20),Author_name Varchar(20),Cost int(7),Category Char(10));
+insert into Book values('1','Wings of Fire','APJ Abdul Kalam','800','history');
+insert into Book values('2','Hit Refresh','Satya Nadella','1000','Biography');
+insert into Book values('3','Positive thinking','Prabhanshu','600','Biography');
+insert into Book values('4','Let us C','Yashwant khanketar','1000','Course');
+ select date_format(Acc_open_Date,'%d-%b-%Y') from Member;
+show tables;
+select * from Member;
+drop table Member;
+alter table Member drop column Penalty_Amount;
+update Book set Cost =1500 where Book_No =4;
+select * from Book;
+drop table Book;
