@@ -1,0 +1,249 @@
+
+mysql> show databases;
++------------------------+
+| Database               |
++------------------------+
+| assg2                  |
+| assg22                 |
+| assg3                  |
+| assg4                  |
+| assginment             |
+| dbtassignment          |
+| edac                   |
+| exam                   |
+| information_schema     |
+| librarymanagmentsystem |
+| mysql                  |
+| performance_schema     |
+| sakila                 |
+| sys                    |
+| world                  |
++------------------------+
+15 rows in set (0.02 sec)
+
+mysql> create table department(dept_id int(10),dept_name char(20));
+Query OK, 0 rows affected, 1 warning (1.49 sec)
+
+mysql> show tables;
++-----------------+
+| Tables_in_assg4 |
++-----------------+
+| department      |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> create table employee( emp_id int(10),emp_name char(20),dept_salary int,manager int);
+Query OK, 0 rows affected, 1 warning (0.78 sec)
+
+mysql> show tables;
++-----------------+
+| Tables_in_assg4 |
++-----------------+
+| department      |
+| employee        |
++-----------------+
+2 rows in set (0.20 sec)
+
+mysql> insert into department values(1,"finance");
+Query OK, 1 row affected (0.46 sec)
+
+mysql> insert into department values(2,"Training");
+Query OK, 1 row affected (0.24 sec)
+
+mysql> insert inot department values(3,"Marketing");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'department values(3,"Marketing")' at line 1
+mysql> insert into department values(3,"Marketing");
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into employee values(1,"arun",1,8000,4);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> alter tables employee add dept_id int(5);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tables employee add dept_id int(5)' at line 1
+mysql> alter table employee add dept_id int(5);
+Query OK, 0 rows affected, 1 warning (1.51 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> tables
+    -> ^C
+mysql> show tables;
++-----------------+
+| Tables_in_assg4 |
++-----------------+
+| department      |
+| employee        |
++-----------------+
+2 rows in set (0.12 sec)
+
+mysql> select *from employee;
+Empty set (0.00 sec)
+
+mysql> insert into employee values(1,"arun",1,8000,4);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select *from employee;
++--------+----------+-------------+---------+---------+
+| emp_id | emp_name | dept_salary | manager | dept_id |
++--------+----------+-------------+---------+---------+
+|      1 | arun     |           1 |    8000 |       4 |
++--------+----------+-------------+---------+---------+
+1 row in set (0.00 sec)
+
+mysql> update employee dept_salary = 8000 where emp_id =1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 8000 where emp_id =1' at line 1
+mysql> update employee set dept_salary=8000 where emp_id=1;
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from employee;
++--------+----------+-------------+---------+---------+
+| emp_id | emp_name | dept_salary | manager | dept_id |
++--------+----------+-------------+---------+---------+
+|      1 | arun     |        8000 |    8000 |       4 |
++--------+----------+-------------+---------+---------+
+1 row in set (0.16 sec)
+
+mysql> update employee manager =4  where emp_id =1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=4  where emp_id =1' at line 1
+mysql> update employee manager=4  where emp_id =1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=4  where emp_id =1' at line 1
+mysql> update employee set manager=4 where emp_id=1;
+Query OK, 1 row affected (0.20 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from employee;
++--------+----------+-------------+---------+---------+
+| emp_id | emp_name | dept_salary | manager | dept_id |
++--------+----------+-------------+---------+---------+
+|      1 | arun     |        8000 |       4 |       4 |
++--------+----------+-------------+---------+---------+
+1 row in set (0.12 sec)
+
+mysql> update employee set dept_id=1 where emp_id =1;
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> insert into employee values(2,"kiran",7000,1,2);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select *from employee;
++--------+----------+-------------+---------+---------+
+| emp_id | emp_name | dept_salary | manager | dept_id |
++--------+----------+-------------+---------+---------+
+|      1 | arun     |        8000 |       4 |       1 |
+|      2 | kiran    |        7000 |       1 |       2 |
++--------+----------+-------------+---------+---------+
+2 rows in set (0.02 sec)
+
+mysql> insert into employee values(2,"scott",3000,1,3);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> select *from employee;
++--------+----------+-------------+---------+---------+
+| emp_id | emp_name | dept_salary | manager | dept_id |
++--------+----------+-------------+---------+---------+
+|      1 | arun     |        8000 |       4 |       1 |
+|      2 | kiran    |        7000 |       1 |       2 |
+|      2 | scott    |        3000 |       1 |       3 |
++--------+----------+-------------+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql> insert into employee values(3,"max",8000,4,2);
+Query OK, 1 row affected (0.17 sec)
+
+mysql> select *from employee;
++--------+----------+-------------+---------+---------+
+| emp_id | emp_name | dept_salary | manager | dept_id |
++--------+----------+-------------+---------+---------+
+|      1 | arun     |        8000 |       4 |       1 |
+|      2 | kiran    |        7000 |       1 |       2 |
+|      2 | scott    |        3000 |       1 |       3 |
+|      3 | max      |        8000 |       4 |       2 |
++--------+----------+-------------+---------+---------+
+4 rows in set (0.00 sec)
+
+mysql> select *from department;
++---------+-----------+
+| dept_id | dept_name |
++---------+-----------+
+|       1 | finance   |
+|       2 | Training  |
+|       3 | Marketing |
++---------+-----------+
+3 rows in set (0.11 sec)
+
+mysql> select dept_name ,emp_name where employee.dept_id = department.dept_id;
+ERROR 1054 (42S22): Unknown column 'dept_name' in 'field list'
+mysql> select dept_name ,emp_name from employee,department where employee.dept_id = department.dept_id;
++-----------+----------+
+| dept_name | emp_name |
++-----------+----------+
+| finance   | arun     |
+| Training  | kiran    |
+| Marketing | scott    |
+| Training  | max      |
++-----------+----------+
+4 rows in set (0.03 sec)
+
+mysql> select * from employee,department where employee.dept_id = department.dept_id;
++--------+----------+-------------+---------+---------+---------+-----------+
+| emp_id | emp_name | dept_salary | manager | dept_id | dept_id | dept_name |
++--------+----------+-------------+---------+---------+---------+-----------+
+|      1 | arun     |        8000 |       4 |       1 |       1 | finance   |
+|      2 | kiran    |        7000 |       1 |       2 |       2 | Training  |
+|      2 | scott    |        3000 |       1 |       3 |       3 | Marketing |
+|      3 | max      |        8000 |       4 |       2 |       2 | Training  |
++--------+----------+-------------+---------+---------+---------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select dept_id,sum(dept_salary) from employee,department group by dept_id;
+ERROR 1052 (23000): Column 'dept_id' in field list is ambiguous
+mysql> select dept_id,sum(dept_salary) from employee group by dept_id;
++---------+------------------+
+| dept_id | sum(dept_salary) |
++---------+------------------+
+|       1 |             8000 |
+|       2 |            15000 |
+|       3 |             3000 |
++---------+------------------+
+3 rows in set (0.04 sec)
+
+select dept_name,emp_name from employee left outer join emp on department.dept_id = employee.dept_id;
+select *from Manager left outer join employee on Manager.id=employee.manager;
+select *from Manager left outer join employee on Manager.id=employee.manager;
+
+
+
+========================================
+Sub Query
+
+ select * from employee where dept_salary =(select dept_salary from employee where emp_id=1);
++--------+----------+-------------+---------+---------+
+| emp_id | emp_name | dept_salary | manager | dept_id |
++--------+----------+-------------+---------+---------+
+|      1 | arun     |        8000 |       4 |       1 |
+|      3 | max      |        8000 |       4 |       2 |
++--------+----------+-------------+---------+---------+
+2 rows in set (0.00 sec)
+
+ select emp_name from employee where dept_id = (select dept_id from employee where emp_name="jack");
++----------+
+| emp_name |
++----------+
+| kiran    |
+| max      |
+| jack     |
++----------+
+3 rows in set (0.00 sec)
+
+ select min(dept_salary) from employee;
++------------------+
+| min(dept_salary) |
++------------------+
+|             3000 |
++------------------+
+1 row in set (0.00 sec)
+
+ update employee set dept_salary=15000 where (select dept_salary from employee where dept_id=(select dept_id from employee where emp_name="max"));
+
+
+
